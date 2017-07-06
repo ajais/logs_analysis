@@ -1,4 +1,4 @@
-# Movie Trailer Website
+# Logs Analysis Script
 
 Script that generates an analysis of the logs for the newspaper website.
 
