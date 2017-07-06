@@ -6,10 +6,10 @@ import psycopg2
 
 
 def get_pop_articles():
-    """ Joins the articles and log tables from the news database to count 
-    the number of times each article is displayed and find the 3 most popular. 
-    The articles are identified with a unique slug that also appears in the path 
-    displayed in the log table. As a result the path can be formatted 
+    """ Joins the articles and log tables from the news database to count
+    the number of times each article is displayed and find the 3 most popular.
+    The articles are identified with a unique slug that also appears in the
+    path displayed in the log table. As a result the path can be formatted
     to match the slug and do the join that way.
     """
     db = psycopg2.connect("dbname=news")
@@ -27,10 +27,10 @@ def get_pop_articles():
 
 
 def get_pop_authors():
-    """ Joins the authors, articles and log tables from the news database to count 
-    the total number of reads per author and rank them. We proceed the same way to 
-    join the log and articles table which will give us reads and instead of grouping 
-    by article title, we group everything by author.
+    """ Joins the authors, articles and log tables from the news database to count
+    the total number of reads per author and rank them. We proceed the same way
+    to join the log and articles table which will give us reads and instead of
+    grouping by article title, we group everything by author.
     """
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
@@ -48,8 +48,8 @@ def get_pop_authors():
 
 
 def get_days_errors():
-    """ Here we leverage the avg method to generate the occurence of errors 
-    for each day as a percentage. And then use it in a subquery to then find 
+    """ Here we leverage the avg method to generate the occurence of errors
+    for each day as a percentage. And then use it in a subquery to then find
     the days where the occurence of errors is superior than 1%.
     """
     db = psycopg2.connect("dbname=news")
